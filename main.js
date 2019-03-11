@@ -14,31 +14,31 @@ window.onload = init;
 function init() {
 
     // When the user clicks the append button, append the given number to the list.
-    document.querySelector('')
+    document.querySelector('#append')
         .addEventListener('click', appendToList);
 
     // When the user clicks the remove button, remove the number at the index given from the list.
-    document.querySelector('')
+    document.querySelector('#remove')
         .addEventListener('click', removeFromList);
 
     // When the user clicks the clear button, remove all items from the list.
-    document.querySelector('')
+    document.querySelector('#clear')
         .addEventListener('click', clearList);
 
     // When the user clicks the add button, add the value to each item.
-    document.querySelector('')
+    document.querySelector('#add')
         .addEventListener('click', addToAll);
 
     // When the user clicks the add button, add the value to each item.
-    document.querySelector('')
+    document.querySelector('#subtract')
         .addEventListener('click', subtractFromAll);
         
     // When the user clicks the multiply button, multiply the value by each item.
-    document.querySelector('')
+    document.querySelector('#multiply')
         .addEventListener('click', multiplyByAll);
         
     // When the user clicks the divide button, divide the value from each item.
-    document.querySelector('')
+    document.querySelector('#divide')
         .addEventListener('click', divideFromAll);
 }
 
@@ -54,9 +54,16 @@ function appendToList(event) {
     event.preventDefault();
 
     // Get the value we're going to append from the input field.
-    let number = document.querySelector('#list-number').value;
+    let inputNumber = document.querySelector('#list-number').value;
+    console.log(inputNumber);
 
     // Append the number to our array.
+    if (inputNumber.length != 0) { // your if statement with length === 0 condition 
+        numbers.push(inputNumber)  // adding word typed to the array
+      }
+    
+      
+
     // Hint: here (and elsewhere), watch the TYPE of the value above.
     // Research `typeof` operator if you're not sure.
 
@@ -64,6 +71,7 @@ function appendToList(event) {
 
 
 }
+
 // Remove from the list.
 function removeFromList(event) {
     // Make sure page doesn't reload on button press.
@@ -186,8 +194,8 @@ function clearUL() {
 
 // Append to the UL.
 function addToUL(numberToAppend) {
-    const UL = document.querySelector('');
-    const newLI = document.createElement('');
+    const UL = document.querySelector('#number-list');
+    const newLI = document.createElement('#number-list');
     newLI.innerText = numberToAppend;
     UL.appendChild(newLI);
 }
